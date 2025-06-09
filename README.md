@@ -15,6 +15,7 @@
 <br>
 <hr>
 <br>
+
 > * Mobile Cadastro
 <img src="./preview/tela-login-cadastro-mobile.png" alt="destop" >
 <br>
@@ -26,5 +27,6 @@
 <br>
 <hr>
 <br>
+
 > * Desktop Cadastro
 <img src="./preview/tela-principal-cadastro-desktop.png" alt="" />
