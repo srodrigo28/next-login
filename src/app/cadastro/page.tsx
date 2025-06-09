@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { PiKey } from "react-icons/pi";
+import { RxPerson } from "react-icons/rx";
 
 const Home: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
       <div className="h-screen flex items-center justify-center flex-col w-full md:w-[30%] md:min-w-[320px] 
         md:max-w-[400px] bg-slate-100 md:block text-gray-800 ">
 
-          <div className="w-[100%] md:mt-5 flex flex-col items-center justify-center">
+          <div className="w-[100%] flex flex-col items-center justify-center">
             <Image src="/svg/logo.svg" alt="logo.svg" width={200} height={200} 
             className="mt-12 mb-10"
             />
@@ -20,8 +21,17 @@ const Home: React.FC = () => {
 
           <form className="w-[100%]">
             <div className="input-wrapper flex flex-col p-5">
+
+              <label className="text-sm">Nome completo</label>
+              <div className="flex items-center justify-center">
+                <input type="text" name="nome" id="nome" 
+                  className="input-class" />
+                <div className="icon-box">
+                  <RxPerson className="icon-box-icon" />
+                </div>
+              </div>
               
-              <label className="text-sm">Email</label>
+              <label className="text-sm mt-3">Email</label>
               <div className="flex items-center justify-center">
                 <input type="email" name="email" id="email" 
                   className="input-class" />
@@ -38,20 +48,30 @@ const Home: React.FC = () => {
                   <PiKey  className="icon-box-icon" />
                 </div>
               </div>
+
+              <label className="text-sm mt-3">Confirmar a Senha</label>
+              <div className="flex items-center justify-center">
+                <input type="password" name="confirmar-senha" id="confirmarSenha" 
+                  className="input-class" />
+                <div className="icon-box">
+                  <PiKey  className="icon-box-icon" />
+                </div>
+              </div>
+
+
               <span className="text-end mt-2 text-xs text-purple-700 cursor-pointer hover:underline hover:text-sm duration-300">Esqueci minha senha?</span>
             </div>
           </form>
 
           <div className="button-wrapper w-[100%] flex flex-col items-center p-5">
-            <button className="w-[100%] mb-7 bg-primary text-white p-2 rounded-md tracking-wide font-semibold">Entrar</button>
+            <button className="w-[100%] mb-7 bg-primary text-white p-2 rounded-md tracking-wide font-semibold">Cadastrar</button>
             <div className="box-ou">
               <span className="h-1 bg-primary flex-1"></span>
               <span>Ou</span>
               <span className="h-1 bg-primary flex-1"></span>
             </div>
-
-            <Link href="/cadastro" className="w-full">
-            <button className="w-[100%] mt-7 bg-gray-300 font-semibold tracking-wide text-gray-900 p-2 rounded-md">Cadastre-se</button>
+            <Link href="/" className="w-full">
+            <button className="w-[100%] mt-7 bg-gray-300 font-semibold tracking-wide text-gray-900 p-2 rounded-md">Voltar para login?</button>
             </Link>
           </div>
        
