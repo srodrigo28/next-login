@@ -9,11 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // Mapear corretamente as variáveis globais
+        background: "var(--background)", // Cor de fundo
+        foreground: "var(--foreground)", // Cor do texto principal
+        primary: "var(--primary)", // Cor principal
+        text: "var(--text-color)", // Cor do texto secundário
+        secondary: "var(--secondary-color)", // Cor secundária
+        grayBackground: "var(--gray-bg)", // Fundo cinza claro
+        graySecondaryBackground: "var(--gray-secondary-bg)", // Fundo cinza secundário
+        formBackground: "var(--form-bg)", // Fundo de formulários
       },
     },
   },
   plugins: [],
 };
+
 export default config;

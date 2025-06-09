@@ -1,101 +1,65 @@
 import Image from "next/image";
+import React from "react";
+import { IoMailOpenOutline } from "react-icons/io5";
+import { PiKey } from "react-icons/pi";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex w-screen h-screen">
+      {/* Seção Mobile */}
+      <div className="h-screen flex items-center justify-center flex-col w-full md:w-[30%] md:min-w-[320px] 
+        md:max-w-[400px] bg-slate-100 md:block text-gray-800 ">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+          <div className="w-[100%] flex flex-col items-center justify-center">
+            <Image src="/svg/logo.svg" alt="logo.svg" width={200} height={200} 
+            className="mt-12 mb-10"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <h1 className="text-2xl font-bold">Seja bem vindo</h1>
+          </div>
+
+          <form className="w-[100%]">
+            <div className="input-wrapper flex flex-col p-5">
+              
+              <label className="text-sm">Email</label>
+              <div className="flex items-center justify-center">
+                <input type="email" name="email" id="email" 
+                  className="input-class" />
+                <div className="icon-box">
+                  <IoMailOpenOutline className="icon-box-icon" />
+                </div>
+              </div>
+
+              <label className="text-sm mt-3">Senha</label>
+              <div className="flex items-center justify-center">
+                <input type="password" name="email" id="email" 
+                  className="input-class" />
+                <div className="icon-box">
+                  <PiKey  className="icon-box-icon" />
+                </div>
+              </div>
+              <span className="text-end mt-2 text-xs text-purple-700 cursor-pointer hover:underline hover:text-sm duration-300">Esqueci minha senha?</span>
+            </div>
+          </form>
+
+          <div className="button-wrapper w-[100%] flex flex-col items-center p-5">
+            <button className="w-[100%] mb-7 bg-primary text-white p-2 rounded-md tracking-wide font-semibold">Entrar</button>
+            <div className="box-ou">
+              <span className="h-1 bg-primary flex-1"></span>
+              <span>Ou</span>
+              <span className="h-1 bg-primary flex-1"></span>
+            </div>
+
+            <button className="w-[100%] mt-7 bg-gray-300 font-semibold tracking-wide text-gray-900 p-2 rounded-md">Cadastre-se</button>
+          </div>
+       
+      </div>
+      {/* Seção Desktop */}
+      <div className="hidden md:flex h-screen md:flex-1 bg-gray-200 justify-center items-center">
+        
+        <Image src="/svg/main.svg" alt="login.svg" width={600} height={600} />
+      </div>
     </div>
   );
-}
+};
+
+export default Home;
